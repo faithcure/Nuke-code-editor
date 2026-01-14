@@ -1,29 +1,29 @@
 # Nuke Code Editor (CodeEditor_v02)
 
-PySide2 tabanlı, Foundry Nuke içine gömülü bir Python IDE / code editor eklentisi.
+A PySide2-based Python IDE / code editor plugin embedded in Foundry Nuke.
 
 > [!IMPORTANT]
-> Bu eklenti **sadece Windows** üzerinde test edilmiştir. macOS/Linux platformlarında **test edilmemiştir**.
+> This plugin has been tested **on Windows only**. It has **not** been tested on macOS/Linux.
 
 ---
 
-## ✨ Özellikler
-- ⚡ **Nuke içinde IDE deneyimi:** Ayrı uygulama açmadan Nuke içinde kod yaz, çalıştır ve çıktı/traceback’i anında gör
-- 🧩 **Node Creator Pro:** Node ara, knob’ları düzenle, **hazır Python kodu üret** (favoriler + filtreleme ile)
-- ✍️ **Akıllı editör:** Pygments ile syntax highlighting, auto-completion, kod katlama, satır numaraları, indent yardımcıları
-- ▶️ **Çalıştırma seçenekleri:** Seçili kodu veya tüm dosyayı çalıştır; Output/Console üzerinden hızlı deneme
-- 🗂️ **Proje akışı:** Proje klasörü aç/oluştur, sekmelerle dosya yönetimi, recent projects
-- 🌐 **GitHub menüsü:** Commit / pull / push / status işlemleri IDE içinden
-- ⚙️ **Ayarlar:** Autosave, tab size, kısayollar ve davranış ayarları (kullanıcı bazlı)
+## ✨ Features
+- ⚡ **IDE experience inside Nuke:** Write/run code in Nuke and see output/tracebacks instantly
+- 🧩 **Node Creator Pro:** Search nodes, edit knobs, and **generate ready-to-run Python** (with favorites + filtering)
+- ✍️ **Smart editor:** Syntax highlighting (Pygments), auto-completion, code folding, line numbers, indentation helpers
+- ▶️ **Run options:** Run selection or the whole file; quick experiments via Output/Console
+- 🗂️ **Project workflow:** Create/open a project folder, tabbed file management, recent projects
+- 🌐 **GitHub menu:** Commit / pull / push / status directly from the IDE
+- ⚙️ **Settings:** Autosave, tab size, shortcuts, and behavior (per-user)
 
 ---
 
-## ⚙️ Kurulum
-1. Bu repodaki `CodeEditor_v02` klasörünü Nuke user dizinine kopyalayın:
+## ⚙️ Installation
+1. Copy the `CodeEditor_v02` folder from this repo into your Nuke user directory:
    - 🪟 Windows: `C:\Users\<user>\.nuke\`
-   - 🍎 macOS: `~/Library/Application Support/Foundry/Nuke/` (bazı kurulumlarda `~/.nuke/`)
+   - 🍎 macOS: `~/Library/Application Support/Foundry/Nuke/` (or `~/.nuke/` on some setups)
    - 🐧 Linux: `~/.nuke/`
-2. Nuke user dizininizdeki `init.py` dosyasına aşağıdaki hook’u ekleyin (yoksa oluşturun):
+2. Add the hook below to your `init.py` in the Nuke user directory (create it if it doesn’t exist):
 
 ```python
 # CodeEditor_v02 init hook
@@ -33,38 +33,37 @@ nuke.pluginAddPath(os.path.join(os.path.dirname(__file__), "CodeEditor_v02"))
 
 ---
 
-## 🚀 Çalıştırma
-- Nuke’yi yeniden başlatın.
-- Menüden: `Nuke > Python > Python IDE > Open as Window` (veya `Open as Panel`)
+## 🚀 Launch
+- Restart Nuke.
+- From the menu: `Nuke > Python > Python IDE > Open as Window` (or `Open as Panel`)
 
 ---
 
-## 🧹 Kaldırma (Uninstall)
-- Nuke user dizininizden `CodeEditor_v02` klasörünü kaldırın.
-- `init.py` / `menu.py` içine eklediğiniz hook satırlarını silin.
+## 🧹 Uninstall
+- Remove the `CodeEditor_v02` folder from your Nuke user directory.
+- Remove the hook lines you added to `init.py` / `menu.py`.
 
 ---
 
-## 🐞 Hata Bildirimi / İstek
-Görülen hatalar, öneriler ve özellik istekleri için: https://github.com/faithcure/Nuke-code-editor/issues
+## 🐞 Bug Reports / Requests
+For bugs, suggestions, and feature requests: https://github.com/faithcure/Nuke-code-editor/issues
 
 ---
 
-## 👤 İletişim
+## 👤 Contact
 - 🌍 Web: https://www.fatihunal.net
-- ✉️ E-posta: fatihunal@gmail.com
+- ✉️ Email: fatihunal@gmail.com
 - 🎬 IMDb: https://www.imdb.com/name/nm10028691/?ref_=nv_sr_srsg_1_tt_0_nm_6_q_fatih%2520%25C3%25BCnal
 - 💼 LinkedIn: https://www.linkedin.com/in/fatih-mehmet-unal/
 
 ---
 
-## 💝 Bağış Linki (Opsiyonel)
-`Donate...` menü öğesini etkinleştirmek için:
-- `editor/donate.py` içinde `DONATE_URL` ayarlayın (dağıtım için önerilir), veya
-- Ortam değişkeni: `CODEEDITOR_V02_DONATE_URL`, veya
-- Kullanıcı `settings.json` içine `General.donate_url`
+## 💝 Donate Link (Optional)
+To enable the **Open Donate Page** button/link:
+- Set your donation page URL in the IDE: `Settings → License / Donation`, or
+- Set it in your user `settings.json` under `Licence.donation_url` (see `editor/settings/settings.json.example`)
 
 ---
 
-## 🧾 Lisans
-Apache-2.0: `LICENSE`. Üçüncü parti bağımlılıklar kendi lisanslarıyla gelir (bkz. `third_party/`).
+## 🧾 License
+Apache-2.0: `LICENSE`. Third-party dependencies ship under their own licenses (see `third_party/`).

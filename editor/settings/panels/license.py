@@ -25,10 +25,10 @@ def build_license_panel(settings_window):
     donation_layout = QVBoxLayout()
 
     donation_info = QLabel(
-        "If this tool helps your workflow, consider supporting its development.\n\n"
-        "Your donation directly funds long‑term maintenance, bug fixes, and new features. "
-        "With steady support, I can keep improving the IDE and expand into more VFX-focused plugins "
-        "and workflow enhancements. Without it, it becomes hard to sustain ongoing development."
+        "To enable the Open Donate Page button/link:\n"
+        "- Paste your donation page URL below, or\n"
+        "- Set it in your user settings.json under Licence.donation_url (see settings.json.example)\n\n"
+        "If this tool helps your workflow, consider supporting its development."
     )
     donation_info.setWordWrap(True)
     donation_layout.addWidget(donation_info)
@@ -43,7 +43,7 @@ def build_license_panel(settings_window):
     donation_url_row.addWidget(donate_button, 0)
     donation_layout.addLayout(donation_url_row)
 
-    donation_note = QLabel("Tip: Set your donation URL here to enable the button.")
+    donation_note = QLabel("Tip: Paste a full URL (e.g. https://github.com/sponsors/<name>).")
     donation_note.setStyleSheet("color: grey;")
     donation_note.setWordWrap(True)
     donation_layout.addWidget(donation_note)
