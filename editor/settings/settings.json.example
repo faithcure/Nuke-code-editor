@@ -1,0 +1,81 @@
+{
+    "General": {
+        "startup_checkbox": false,
+        "startup_launch_mode": "Standalone Window",
+        "resume_last_project": false,
+        "default_language": "English",
+        "default_theme": "Nuke Default",
+        "default_interface_mode": "Mumen Rider (Professional)",
+        "syntax_style_dropdown": "monokai"
+    },
+    "Keyboard": {
+        "New Project": "Ctrl+N",
+        "New File": "Ctrl+Shift+N",
+        "Open File": "Ctrl+O",
+        "Save": "Ctrl+S",
+        "Save As": "Ctrl+Shift+S",
+        "Close Tab": "Ctrl+W",
+        "Exit": "Ctrl+Q",
+        "Undo": "Ctrl+Z",
+        "Redo": "Ctrl+Y",
+        "Cut": "Ctrl+X",
+        "Copy": "Ctrl+C",
+        "Paste": "Ctrl+V",
+        "Select All": "Ctrl+A",
+        "Find": "Ctrl+F",
+        "Replace": "Ctrl+Shift+R",
+        "Go to Line": "Ctrl+G",
+        "Comment Toggle": "Ctrl+/",
+        "Duplicate Line": "Ctrl+D",
+        "Delete Line": "Ctrl+Shift+K",
+        "Move Line Up": "Alt+Up",
+        "Move Line Down": "Alt+Down",
+        "Smart Home": "Home",
+        "Smart End": "End",
+        "Zoom In": "Ctrl++",
+        "Zoom Out": "Ctrl+-",
+        "Reset Zoom": "Ctrl+0",
+        "Show Whitespace": "Ctrl+Shift+W",
+        "Run Code": "F5",
+        "Execute Selected or All": "Ctrl+1",
+        "Execute All Code": "Ctrl+Shift+Enter",
+        "Execute Current Line": "Ctrl+Alt+Enter"
+    },
+    "Code Editor": {
+        "default_selected_font": "Consolas",
+        "default_font_size": 14,
+        "line_spacing_size": 1.2,
+        "autosave_interval": 5,
+        "tab_size": 4,
+        "is_wheel_zoom": true,
+        "disable_smart_compilation": false,
+        "disable_completion_popup": false,
+        "disable_suggestion": false,
+        "disable_fuzzy_compilation": false,
+        "disable_node_completer": false,
+        "enable_code_folding": true,
+        "enable_autosave": false,
+        "use_spaces_for_tabs": true
+    },
+    "Environment": {
+        "nuke_value_DESIRED_NUKE_VERSION": "",
+        "nuke_value_NUKE_AF_RENDER": "",
+        "nuke_value_NUKE_CGRU_PATH": "",
+        "nuke_value_NUKE_DIR": "",
+        "nuke_value_NUKE_EXEC": "",
+        "nuke_value_NUKE_LOCATION": "",
+        "nuke_value_NUKE_PATH": "",
+        "nuke_value_NUKE_VERSION": "",
+        "nuke_value_NUKE_I_2024_0111": "",
+        "nuke_value_NUKEX_I_2024_0111": "",
+        "nuke_value_NUKE_TEMP_DIR": ""
+    },
+    "Licence": {
+        "donation_url": ""
+    },
+    "Github": {
+        "github_username": "",
+        "github_token": "",
+        "github_repo_url": ""
+    }
+}

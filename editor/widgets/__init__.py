@@ -1,0 +1,1 @@
+"""Backward-compatible widgets namespace."""

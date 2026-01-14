@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Nuke Code Editor - Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      :root {
+        --bg: #0f1116;
+        --panel: #151924;
+        --panel-2: #1b2230;
+        --ink: #e9edf2;
+        --muted: #a8b3c2;
+        --accent: #ff6f3d;
+        --accent-2: #3bb6ff;
+        --accent-3: #ffd166;
+        --border: rgba(255, 255, 255, 0.08);
+        --shadow: 0 24px 60px rgba(8, 11, 18, 0.45);
+        --radius: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", "Fira Sans", "Source Sans 3", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at 15% 10%, rgba(59, 182, 255, 0.18), transparent 50%),
+          radial-gradient(circle at 90% 20%, rgba(255, 111, 61, 0.18), transparent 45%),
+          radial-gradient(circle at 50% 90%, rgba(255, 209, 102, 0.12), transparent 45%),
+          var(--bg);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 32px;
+        border-radius: var(--radius);
+        background: linear-gradient(135deg, rgba(21, 25, 36, 0.95), rgba(21, 25, 36, 0.7));
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .badge {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 111, 61, 0.16);
+        color: #ffd0b8;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      h1 {
+        margin: 16px 0 12px;
+        font-size: clamp(32px, 4vw, 44px);
+        line-height: 1.1;
+      }
+
+      .hero p {
+        color: var(--muted);
+        margin: 0 0 20px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        background: var(--accent);
+        color: #1a0c05;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--border);
+      }
+
+      .hero-card {
+        background: var(--panel);
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid var(--border);
+      }
+
+      .hero-card h3 {
+        margin: 0 0 12px;
+      }
+
+      .hero-card ol {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 28px;
+        margin-top: 32px;
+      }
+
+      nav {
+        position: sticky;
+        top: 24px;
+        align-self: start;
+        background: var(--panel);
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid var(--border);
+      }
+
+      nav h4 {
+        margin: 0 0 12px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+      }
+
+      nav a {
+        display: block;
+        padding: 6px 0;
+        color: var(--muted);
+      }
+
+      nav a:hover {
+        color: var(--ink);
+      }
+
+      .content section {
+        background: var(--panel);
+        border-radius: var(--radius);
+        padding: 28px;
+        border: 1px solid var(--border);
+        margin-bottom: 24px;
+      }
+
+      .content h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+      .kicker {
+        color: var(--accent-2);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--panel-2);
+      }
+
+      .callout {
+        border-left: 4px solid var(--accent);
+        padding: 16px;
+        background: rgba(255, 111, 61, 0.08);
+        border-radius: 12px;
+      }
+
+      code, pre {
+        font-family: "JetBrains Mono", "Iosevka", "Fira Code", monospace;
+        font-size: 13px;
+      }
+
+      pre {
+        background: #0b0e15;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        color: var(--muted);
+      }
+
+      th, td {
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      details {
+        background: var(--panel-2);
+        border-radius: 12px;
+        padding: 12px 16px;
+        border: 1px solid var(--border);
+        margin-bottom: 12px;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .footer {
+        text-align: center;
+        color: var(--muted);
+        margin-top: 40px;
+      }
+
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        nav {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <div>
+          <span class="badge">Offline Documentation</span>
+          <h1>Nuke Code Editor Documentation</h1>
+          <p>
+            A focused guide to the built-in IDE for Foundry Nuke. Learn the workflow,
+            power features, and the fastest way to build nodes with Python.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#overview">Start Here</a>
+            <a class="button secondary" href="#node-creator-pro">Node Creator Pro</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Quick Start</h3>
+          <ol>
+            <li>Install the plugin into your <code>.nuke</code> directory.</li>
+            <li>Restart Nuke and open the IDE from the menu.</li>
+            <li>Create or open a project folder.</li>
+            <li>Run code and inspect output instantly.</li>
+          </ol>
+        </div>
+      </header>
+
+      <div class="layout">
+        <nav>
+          <h4>Contents</h4>
+          <a href="#overview">Overview</a>
+          <a href="#installation">Installation and Launch</a>
+          <a href="#ui-tour">UI Tour</a>
+          <a href="#projects">Projects and Files</a>
+          <a href="#editor-features">Editor Features</a>
+          <a href="#run-code">Running Code</a>
+          <a href="#node-creator-pro">Node Creator Pro</a>
+          <a href="#create-node-completer">CreateNode Auto-Completion</a>
+          <a href="#github">GitHub Integration</a>
+          <a href="#settings">Settings</a>
+          <a href="#shortcuts">Keyboard Shortcuts</a>
+          <a href="#troubleshooting">Troubleshooting</a>
+          <a href="#paths">Paths and Data Locations</a>
+          <a href="#license">License and Credits</a>
+        </nav>
+
+        <main class="content">
+          <section id="overview">
+            <div class="kicker">Overview</div>
+            <h2>Built for Nuke scripting workflows</h2>
+            <p>
+              Nuke Code Editor is a PySide2-based IDE embedded into Foundry Nuke. It
+              brings a multi-tab editor, output console, workspace tools, and Nuke-specific
+              helpers into a single environment.
+            </p>
+            <div class="grid">
+              <div class="card">
+                <h3>Multi-tab Editing</h3>
+                <p>Split views, tab management, and fast file switching.</p>
+              </div>
+              <div class="card">
+                <h3>Nuke-aware Tools</h3>
+                <p>Node creation helpers, inline suggestions, and completions.</p>
+              </div>
+              <div class="card">
+                <h3>Output + Console</h3>
+                <p>Live execution results and quick debugging feedback.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="installation">
+            <div class="kicker">Install</div>
+            <h2>Installation and Launch</h2>
+            <p>Follow the recommended setup from <code>INSTALL.md</code>:</p>
+            <pre><code>import nuke, os
+nuke.pluginAddPath(os.path.join(os.path.dirname(__file__), "CodeEditor_v02"))</code></pre>
+            <ul>
+              <li>Restart Nuke after adding the path.</li>
+              <li>Open the editor from the Nuke menu.</li>
+            </ul>
+          </section>
+
+          <section id="ui-tour">
+            <div class="kicker">UI Tour</div>
+            <h2>Know your workspace</h2>
+            <div class="grid">
+              <div class="card">
+                <h3>Toolbar</h3>
+                <p>Quick access to new files, project tools, and run actions.</p>
+              </div>
+              <div class="card">
+                <h3>Workspace</h3>
+                <p>Project tree and file navigation for fast context switching.</p>
+              </div>
+              <div class="card">
+                <h3>Output + Console</h3>
+                <p>Run code, inspect logs, and test snippets.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="projects">
+            <div class="kicker">Projects</div>
+            <h2>Projects and Files</h2>
+            <ul>
+              <li>Create a new project or open an existing folder.</li>
+              <li>Use tabs for open files and save with <code>Ctrl+S</code>.</li>
+              <li>Recent projects are tracked automatically.</li>
+            </ul>
+          </section>
+
+          <section id="editor-features">
+            <div class="kicker">Editor</div>
+            <h2>Editor Features</h2>
+            <div class="grid">
+              <div class="card">
+                <h3>Highlighting</h3>
+                <p>Syntax coloring powered by Pygments.</p>
+              </div>
+              <div class="card">
+                <h3>Completion</h3>
+                <p>Smart completion and inline ghosting suggestions.</p>
+              </div>
+              <div class="card">
+                <h3>Editing Tools</h3>
+                <p>Code folding, line numbers, indentation helpers.</p>
+              </div>
+            </div>
+            <p>Autosave, tab size, and behavior are configurable in Settings.</p>
+          </section>
+
+          <section id="run-code">
+            <div class="kicker">Run</div>
+            <h2>Running Code</h2>
+            <ul>
+              <li>Run selected code or the full file from the toolbar or shortcut.</li>
+              <li>Output appears in the Output tab with tracebacks on errors.</li>
+              <li>Use the Console for quick experiments.</li>
+            </ul>
+          </section>
+
+          <section id="node-creator-pro">
+            <div class="kicker">Node Creator Pro</div>
+            <h2>Build nodes fast with generated code</h2>
+            <div class="callout">
+              Search nodes, edit knobs, and generate ready-to-run Python in seconds.
+            </div>
+            <ul>
+              <li>Filter by category or source (built-in vs plugin/gizmo).</li>
+              <li>Favorites list for quick access to frequent nodes.</li>
+              <li>Wrap generated code in a function when needed.</li>
+            </ul>
+          </section>
+
+          <section id="create-node-completer">
+            <div class="kicker">CreateNode</div>
+            <h2>CreateNode Auto-Completion</h2>
+            <ul>
+              <li>Type <code>nuke.createNode(</code> to trigger node suggestions.</li>
+              <li>Select a node to insert a complete create call.</li>
+              <li>Node list is cached for fast lookups.</li>
+            </ul>
+          </section>
+
+          <section id="github">
+            <div class="kicker">GitHub</div>
+            <h2>GitHub Integration</h2>
+            <ul>
+              <li>Commit, pull, push, and view status from the GitHub menu.</li>
+              <li>Configure credentials in Settings.</li>
+            </ul>
+          </section>
+
+          <section id="settings">
+            <div class="kicker">Settings</div>
+            <h2>Settings</h2>
+            <ul>
+              <li>Access Settings from the Preferences menu.</li>
+              <li>Configure editor behavior, UI layout, and shortcuts.</li>
+              <li>Settings are stored per user and created automatically.</li>
+            </ul>
+          </section>
+
+          <section id="shortcuts">
+            <div class="kicker">Shortcuts</div>
+            <h2>Keyboard Shortcuts</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Shortcut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>New File</td><td><code>Ctrl+Shift+N</code></td></tr>
+                <tr><td>Open File</td><td><code>Ctrl+O</code></td></tr>
+                <tr><td>Save</td><td><code>Ctrl+S</code></td></tr>
+                <tr><td>Find</td><td><code>Ctrl+F</code></td></tr>
+                <tr><td>Replace</td><td><code>Ctrl+Shift+R</code></td></tr>
+                <tr><td>Go To Line</td><td><code>Ctrl+G</code></td></tr>
+              </tbody>
+            </table>
+            <p>Shortcuts can be customized in Settings.</p>
+          </section>
+
+          <section id="troubleshooting">
+            <div class="kicker">Support</div>
+            <h2>Troubleshooting</h2>
+            <details>
+              <summary>Editor does not open</summary>
+              <p>Verify that the plugin path is added correctly and restart Nuke.</p>
+            </details>
+            <details>
+              <summary>Settings file missing</summary>
+              <p>Delete the settings file and relaunch to recreate defaults.</p>
+            </details>
+            <details>
+              <summary>Node Creator list is empty</summary>
+              <p>Check that Nuke plugin paths are valid and readable.</p>
+            </details>
+            <details>
+              <summary>GitHub actions fail</summary>
+              <p>Verify credentials and network access in Settings.</p>
+            </details>
+          </section>
+
+          <section id="paths">
+            <div class="kicker">Data</div>
+            <h2>Paths and Data Locations</h2>
+            <ul>
+              <li>User data is stored in a per-user app data folder.</li>
+              <li>Cache files are stored under the user cache path.</li>
+              <li>Example settings file: <code>editor/settings/settings.json.example</code>.</li>
+            </ul>
+          </section>
+
+          <section id="license">
+            <div class="kicker">Legal</div>
+            <h2>License and Credits</h2>
+            <p>
+              This plugin ships with third-party libraries such as Pygments and GitPython.
+              See their license files in the repository for details.
+            </p>
+          </section>
+        </main>
+      </div>
+
+      <div class="footer">
+        Nuke Code Editor Documentation - Offline Bundle
+      </div>
+    </div>
+  </body>
+</html>
