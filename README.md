@@ -1,6 +1,6 @@
 # Nuke Code Editor (CodeEditor_v02)
 
-A PySide2-based Python IDE / code editor plugin embedded in Foundry Nuke.
+A Python IDE / code editor plugin embedded in Foundry Nuke.
 
 > [!IMPORTANT]
 > This plugin has been tested **on Windows only**. It has **not** been tested on macOS/Linux.
@@ -40,7 +40,7 @@ nuke.pluginAddPath(os.path.join(os.path.dirname(__file__), "CodeEditor_v02"))
 ---
 
 ## 🧹 Uninstall
-- Remove the `CodeEditor_v02` folder from your Nuke user directory.
+- Remove the `Nuke-code-editor-main` folder from your Nuke user directory.
 - Remove the hook lines you added to `init.py` / `menu.py`.
 
 ---
@@ -59,10 +59,6 @@ For bugs, suggestions, and feature requests: https://github.com/faithcure/Nuke-c
 ---
 
 ## 💝 Donate Link (Optional)
-To enable the **Open Donate Page** button/link:
-- Set your donation page URL in the IDE: `Settings → License / Donation`, or
-- Set it in your user `settings.json` under `Licence.donation_url` (see `editor/settings/settings.json.example`)
-
 ---
 
 ## 🧾 License
