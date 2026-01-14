@@ -1,9 +1,12 @@
-# Nuke Code Editor 
+# Nuke Code Editor
 
 A Python IDE / code editor plugin embedded in Foundry Nuke.
 
 > [!IMPORTANT]
 > This plugin has been tested **on Windows only**. It has **not** been tested on macOS/Linux.
+
+> [!NOTE]
+> The plugin folder name is **`CodeEditor_v02`** (legacy working name). Keep this folder name for now.
 
 ---
 
@@ -18,8 +21,25 @@ A Python IDE / code editor plugin embedded in Foundry Nuke.
 
 ---
 
+## 📥 Download (Git Clone)
+GitHub “Download ZIP” will usually extract as `Nuke-code-editor-main`. If you want a clean folder name, use `git clone`.
+
+**Windows (recommended): clone directly into your Nuke user folder**
+```powershell
+cd $env:USERPROFILE\.nuke
+git clone https://github.com/faithcure/Nuke-code-editor.git CodeEditor_v02
+```
+
+**Update later**
+```powershell
+cd $env:USERPROFILE\.nuke\CodeEditor_v02
+git pull
+```
+
+---
+
 ## ⚙️ Installation
-1. Copy the `CodeEditor_v02` folder from this repo into your Nuke user directory:
+1. Ensure the plugin folder is named `CodeEditor_v02` and placed in your Nuke user directory:
    - 🪟 Windows: `C:\Users\<user>\.nuke\`
    - 🍎 macOS: `~/Library/Application Support/Foundry/Nuke/` (or `~/.nuke/` on some setups)
    - 🐧 Linux: `~/.nuke/`
@@ -40,7 +60,7 @@ nuke.pluginAddPath(os.path.join(os.path.dirname(__file__), "CodeEditor_v02"))
 ---
 
 ## 🧹 Uninstall
-- Remove the `Nuke-code-editor-main` folder from your Nuke user directory.
+- Remove the `CodeEditor_v02` folder from your Nuke user directory.
 - Remove the hook lines you added to `init.py` / `menu.py`.
 
 ---
