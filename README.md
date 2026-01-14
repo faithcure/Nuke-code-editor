@@ -1,4 +1,4 @@
-# Nuke Code Editor (CodeEditor_v02)
+# Nuke Code Editor 
 
 A Python IDE / code editor plugin embedded in Foundry Nuke.
 
